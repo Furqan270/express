@@ -1,8 +1,12 @@
 const route = require('express').Router();
-const todoRoute = require('./todo')
-const TodoController = require('../controllers/TodoController')
-todoRoute.get('/', TodoController.getTodos)
-todoRoute.get('/add', TodoController.addTodos)
+const todoRoutes = require('./todo')
+
+
+route.get('/', (req, res) => {
+    res.send('Hello page utama')
+})
+
+route.use('/todos', todoRoutes)
 
 
 module.exports = route

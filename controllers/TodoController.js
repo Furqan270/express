@@ -1,9 +1,20 @@
 class TodoController {
     static getTodos(req, res) {
-        res.send('page todos utama');
+        const arrObjects = [
+            { id: 1, title: 'Belajar NodeJS', status: 'done' },
+            { id: 2, title: 'Belajar ExpressJS', status: 'on progress' },
+            { id: 3, title: 'Belajar MongoDB', status: 'on progress' },
+        ]
+        res.send(arrObjects);
     }
     static addTodos(req, res) {
-        res.send('page add todos');
+        res.json({
+            message: 'Add Todos',
+            data: {
+                title: 'Belajar NodeJS',
+                status: 'on progress'
+            }
+        })
     }
 }
 
